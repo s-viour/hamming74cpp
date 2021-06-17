@@ -6,4 +6,8 @@ project(
   LANGUAGES CXX
 )
 
-add_executable(hamming74cpp main.cpp)
+add_library(hamming74cpp src/hamming74.cpp)
+add_executable(hamming74 main.cpp)
+
+target_include_directories(hamming74cpp PUBLIC include/)
+target_link_libraries(hamming74 hamming74cpp)
